@@ -1,22 +1,21 @@
 #include <iostream>
-#include <conio.h> // Para _getch()
-
+#include <conio.h> 
 using namespace std;
 
 int main() {
     char opcion;
-    string error_log = "Expresión no valida";
+    string error_log = "ExpresiÃ³n no valida";
     while (true) {
         system("cls");
-        cout << "Presiona 'q' para salir, 'c' para continuar, o cualquier otra tecla para ver la opción seleccionada: ";
+        cout << "Presiona 'q' para salir, 'c' para continuar, o cualquier otra tecla para ver la opciÃ³n seleccionada: ";
 
-        opcion = _getch(); // Lee un carácter sin necesidad de presionar Enter
+        opcion = _getch(); 
 
         switch (opcion) {
             case 'q':
             case 'Q':
                 cout << "\nSaliendo del programa..." << endl;
-                return 0; // Salir del programa
+                return 0; 
 
             case 'c':
             case 'C':
@@ -24,7 +23,7 @@ int main() {
                 break;
 
             default:
-                cout << "\nOpción seleccionada: " << opcion << endl;
+                cout << "\nOpciÃ³n seleccionada: " << opcion << endl;
                 break;
         }
     }
