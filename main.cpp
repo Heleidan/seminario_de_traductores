@@ -1,33 +1,46 @@
 #include <iostream>
-#include <conio.h> // Para _getch()
-
+#include <string>
+#include <conio.h>
+#include "nodo.h"
 using namespace std;
 
+string primera_entrada(string x) {
+    return x;
+}
+
 int main() {
-    char opcion;
-    string error_log = "Expresión no valida";
+    string input;
+
     while (true) {
         system("cls");
-        cout << "Presiona 'q' para salir, 'c' para continuar, o cualquier otra tecla para ver la opción seleccionada: ";
+        cout << "> 'exit' SALIDA: ";
+        getline(cin, input);
 
-        opcion = _getch(); // Lee un carácter sin necesidad de presionar Enter
-
-        switch (opcion) {
-            case 'q':
-            case 'Q':
-                cout << "\nSaliendo del programa..." << endl;
-                return 0; // Salir del programa
-
-            case 'c':
-            case 'C':
-                cout << "\nContinuando... (presiona 'q' para salir o 'c' para continuar)" << endl;
-                break;
-
-            default:
-                cout << "\nOpción seleccionada: " << opcion << endl;
-                break;
+        if (input == "exit") {
+            return 0;
         }
-    }
 
-    return 0;
+        string result = primera_entrada(input);
+        cout << "Resultado de primera_entrada: " << result << endl;
+
+        system("pause"); // Pauses the program to allow the user to read the output
+    }
 }
+
+#ifndef NODO_H_INCLUDED
+#define NODO_H_INCLUDED
+
+class nodo{
+private:
+    int valor;
+    nodo* sig;
+    nodo* ant;
+};
+
+class pila{
+public:
+    nodo* raiz;
+    pila();
+};
+
+#endif // NODO_H_INCLUDED
